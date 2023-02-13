@@ -1,0 +1,15 @@
+<h1>Imported Recipes</h1>
+
+<p>Recipes Found:</p>
+
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index|%>
+  <li><%= recipe.name%><a href="/import/<%= index %>">Add</a></div></li>
+  <li><%= recipe.description%></li>
+  <li><%= recipe.prep_time%></li>
+  <li><%= recipe.rating%></li>
+  <p>--------------------</p>
+  <% end %>
+
+</ul>

@@ -1,0 +1,21 @@
+<h1>Welcome to your Cookbook</h1>
+
+<p>These are your recipes:</p>
+
+<ul>
+  <% @recipes.each_with_index do |recipe, index|%>
+  <li>[<%= recipe.done ? 'X' : ' ' %>] <%= recipe.name %><a href="/delete/<%= index %>">Delete</a>
+  <br>
+  <a href="/mark_done/<%= index %>">Mark-As-Done</a>
+  </li>
+  <li><%= recipe.description%></li>
+  <li><%= recipe.prep_time%></li>
+  <li><%= recipe.rating%></li>
+  <p>--------------------</p>
+  <% end %>
+
+</ul>
+
+<a href="/new">add recipe</a>
+<p></p>
+<a href="/import">Import A Recipe</a>
